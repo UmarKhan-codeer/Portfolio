@@ -19,8 +19,8 @@ const projects = [
     src: "portfolio.jpg",
     link: "https://i.postimg.cc/L6JZYyW6/porfolio.png",
     color: "#6c5ce7",
-    githubLink: "https://github.com/yourusername/portfolio",
-    liveLink: "https://yourportfolio.vercel.app",
+    githubLink: "https://github.com/UmarKhan-codeer/Portfolio.git",
+    liveLink: "https://portfolio-umer-pro.vercel.app/",
   },
   {
   title: "GrillOut – Food Ordering Website",
@@ -28,7 +28,7 @@ const projects = [
   src: "grillout.jpg", 
   link: "https://i.postimg.cc/GpFD3H5F/preview.png", 
   color: "#ff7675",
-  githubLink: "https://github.com/yourusername/grillout-website", 
+  githubLink: "https://github.com/UmarKhan-codeer/GrillOut-website.git", 
   liveLink: "https://grillout.vercel.app", 
 },
  {
