@@ -10,8 +10,8 @@ const projects = [
     src: "Scrapify.jpg",
     link: "https://i.postimg.cc/rpNdX7Dg/frontend.png",
     color: "#00b894",
-    githubLink: "https://github.com/yourusername/scrapify",
-    liveLink: "https://livecrawler.vercel.app",
+    githubLink: "https://github.com/UmarKhan-codeer/Scrapify-Beta.git",
+    liveLink: "",
   },
   {
     title: "Umer's Portfolio Website",
@@ -29,7 +29,7 @@ const projects = [
   link: "https://i.postimg.cc/GpFD3H5F/preview.png", 
   color: "#ff7675",
   githubLink: "https://github.com/UmarKhan-codeer/GrillOut-website.git", 
-  liveLink: "https://grillout.vercel.app", 
+  liveLink: "https://grillout-resturant-website-t71v.vercel.app/", 
 },
  {
   title: "Recrutify – AI Resume Builder",
@@ -37,8 +37,8 @@ const projects = [
   src: "airesumebuilder.jpg",
   link: "https://i.postimg.cc/mkpBGWWx/resume-builder.png", 
   color: "#9b59b6",
-  githubLink: "https://github.com/yourusername/ai-resume-builder", 
-  liveLink: "https://ai-resume.vercel.app", 
+  githubLink: "https://github.com/UmarKhan-codeer/Ai-Resume-Builder-Frontend.git", 
+  liveLink: "https://ai-resume-builder-nine-pi.vercel.app/", 
 },
 {
   title: "PassOP – Personal Password Manager",
