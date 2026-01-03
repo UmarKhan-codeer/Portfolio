@@ -1,8 +1,9 @@
 "use client";
 import { useMotionValue } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useMotionTemplate, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import PropTypes from "prop-types";
 
 export const EvervaultCard = ({ text, className }) => {
   let mouseX = useMotionValue(0);
@@ -51,7 +52,12 @@ export const EvervaultCard = ({ text, className }) => {
   );
 };
 
-export function CardPattern({ mouseX, mouseY, randomString }) {
+EvervaultCard.propTypes = {
+  text: PropTypes.string,
+  className: PropTypes.string,
+};
+
+function CardPattern({ mouseX, mouseY, randomString }) {
   let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
@@ -74,9 +80,15 @@ export function CardPattern({ mouseX, mouseY, randomString }) {
   );
 }
 
+CardPattern.propTypes = {
+  mouseX: PropTypes.object.isRequired,
+  mouseY: PropTypes.object.isRequired,
+  randomString: PropTypes.string.isRequired,
+};
+
 const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-export const generateRandomString = (length) => {
+const generateRandomString = (length) => {
   let result = "";
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -84,7 +96,7 @@ export const generateRandomString = (length) => {
   return result;
 };
 
-export const Icon = ({ className, ...rest }) => {
+const Icon = ({ className, ...rest }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -98,4 +110,8 @@ export const Icon = ({ className, ...rest }) => {
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
     </svg>
   );
+};
+
+Icon.propTypes = {
+  className: PropTypes.string,
 };

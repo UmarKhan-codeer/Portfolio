@@ -1,4 +1,4 @@
-import * as React from "react"
+/* eslint-disable react-refresh/only-export-components */
 import { cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils"
@@ -23,12 +23,19 @@ const badgeVariants = cva(
   }
 )
 
+import PropTypes from "prop-types"
+
 function Badge({
   className,
   variant,
   ...props
 }) {
   return (<div className={cn(badgeVariants({ variant }), className)} {...props} />);
+}
+
+Badge.propTypes = {
+  className: PropTypes.string,
+  variant: PropTypes.string,
 }
 
 export { Badge, badgeVariants }

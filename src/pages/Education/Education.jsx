@@ -1,13 +1,5 @@
-import React, { useState } from "react";
-import EducationLoader from "@/components/ui/EducationLoader";
-import {
-  Star,
-  Award,
-  Calendar,
-  BookOpen,
-  GraduationCap,
-  Trophy,
-} from "lucide-react";
+import { useState } from "react";
+import { Award, Calendar, BookOpen, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EducationSection = () => {
@@ -15,15 +7,6 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      // degree: "Secondary School Certificate (SSC)",
-      // school: "Sir Syed Model School and College Haripur",
-      // mascot: "📘",
-      // year: "2019-2020",
-      // achievements: ["GPA: 4.89", "Subject: Science"],
-      // skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
-      // description:
-      //   "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
-
       degree: "Bachelor of Science in Software Engineering",
       school: "University of Haripur",
       mascot: "💻",
@@ -46,16 +29,6 @@ const EducationSection = () => {
       description:
         "Pursued comprehensive education in software engineering, covering both theoretical foundations and hands-on development. Specialized in building full-stack applications, managing software projects, and integrating intelligent systems using modern technologies.",
     },
-    // {
-    //   degree: "Higher Secondary Certificate (HSC)",
-    //   school: "Dottopara Model Degree College",
-    //   mascot: "📗",
-    //   year: "2021-2023",
-    //   achievements: ["GPA: 4.25", "Subject: Arts"],
-    //   skills: ["Literature", "Social Studies", "Economics", "History"],
-    //   description:
-    //     "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
-    // },
   ];
 
   const containerVariants = {

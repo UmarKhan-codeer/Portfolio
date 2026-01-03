@@ -1,5 +1,5 @@
-import React from "react";
-import { Code2, Activity, Cpu, Layers, Network, Binary } from "lucide-react";
+import { Code2, Layers, Network } from "lucide-react";
+import PropTypes from "prop-types";
 
 const ExperienceCard = ({
   title,
@@ -51,11 +51,19 @@ const ExperienceCard = ({
   </div>
 );
 
+ExperienceCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  period: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  icon: PropTypes.elementType.isRequired,
+};
+
 const ExperienceSection = () => {
   const experiences = [
     {
       icon: Network,
-      title: "Frontend developer",
+      title: "Frontend developement Intern",
       company: "Evelopers",
       period: "June/2024 - August/2024 ",
       description:
@@ -63,7 +71,7 @@ const ExperienceSection = () => {
     },
     {
       icon: Layers,
-      title: "Junior Frontend Developer",
+      title: " Web Developer Intern",
       company: "Innova Corex",
       period: " March/2025 - April/2025 ",
       description:
@@ -71,11 +79,11 @@ const ExperienceSection = () => {
     },
     {
       icon: Code2,
-      title: "FullStack Web Developer",
-      company: "Freelancing",
-      period: " April/2025 - Present",
+      title: "FullStack Web Intern",
+      company: "Revnix",
+      period: " September/2025 - Present",
       description:
-        "Working on diffrent real world projects",
+        "Developed full-stack expertise across modern web technologies through hands-on project work.Working on live projects, owning feature implementations, debugging issues, and collaborating in a real development workflow.",
     },
   ];
 
@@ -114,7 +122,8 @@ const ExperienceSection = () => {
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
             </div>
             <p className="text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-2xl">
-              "Transforming ideas into digital reality, one project at a time"
+              &quot;Transforming ideas into digital reality, one project at a
+              time&quot;
             </p>
           </div>
 

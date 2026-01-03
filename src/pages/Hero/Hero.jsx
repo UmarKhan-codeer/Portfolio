@@ -4,7 +4,6 @@ import "prismjs/components/prism-javascript";
 import "@/assets/css/tomorrow.css";
 import Meteors from "@/components/ui/meteors";
 import PortfolioPage from "@/pages/About/About";
-import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
 
 const GridBackground = () => {
@@ -41,22 +40,22 @@ const GridBackground = () => {
 
 export default function Hero() {
   const words = [
-    "Full-Stack Developer & UI/UX Enthusiast",
-    "Next.js Developer & Creator of Scrapify",
-    "Learning MERN Stack",
-    "AI & ML Enthusiast",
+    "Frontend Engineer • Next.js & React",
+    "Building Production-Ready UI Systems",
+    "Security-Aware Web Developer",
+    "Creator of Real-World Web Projects",
   ];
 
   const [code] = useState(`
 const profile = {
     name: 'Umer Javed',
-    title: 'Full-Stack Developer | AI Integrator | Creative Problem Solver',
+    title: 'Frontend Engineer | Next.js & UI Engineering | Security-Aware Developer',
     skills: [
       'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express',
         'MongoDB', 'Docker', 'AWS', 'GraphQL', 'Git', 'Linux', 'Tailwind CSS',
-        'WebSockets', 'OpenAI API', 'Firebase', 'AI Prompt Engineering'
+        'WebSockets', 'Security-Conscious Web Development', 'AI Integration in Web Apps ','Firebase', 'AI Prompt Engineering'
     ],
-    interests: ['AI & Automation', 'Real-time Web Apps', 'Clean UI/UX' ],
+    interests: ['Modern UI/UX Engineering', 'Performance-Optimized Frontends', 'Security-Conscious Web Development', 'AI Integration in Web Apps' ],
     hardWorker: true,
     quickLearner: true,
     problemSolver: true,
@@ -157,9 +156,9 @@ const profile = {
             style={{
               paddingTop:
                 window.innerWidth >= 1360 &&
-                window.innerWidth <= 1370 &&
-                window.innerHeight >= 760 &&
-                window.innerHeight <= 775
+                  window.innerWidth <= 1370 &&
+                  window.innerHeight >= 760 &&
+                  window.innerHeight <= 775
                   ? "12rem"
                   : "",
             }}
@@ -210,8 +209,9 @@ const profile = {
               {/* Description */}
               <div className="relative mb-8 sm:mb-12 max-w-xl">
                 <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
-                  AI Enthusiast 🤖 | Software Engineering Graduate 🎓| Crafting
-                  smart, scalable, and secure web apps 💻✨
+                  Frontend-focused Software Engineering graduate building scalable,
+                  performance-driven web applications with a strong emphasis on
+                  clean UI, real-world usability, and security-aware development.
                 </p>
               </div>
 
@@ -224,7 +224,7 @@ const profile = {
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <span>Learn More</span>
+                      <span>View My Work</span>
                       <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
                     </span>
                   </span>
@@ -237,7 +237,7 @@ const profile = {
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
                     <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
-                      <span>Get Resume</span>
+                      <span>Download Resume</span>
                       <i className="fas fa-envelope transform transition-all duration-300 group-hover:rotate-12"></i>
                     </span>
                   </span>
@@ -247,18 +247,17 @@ const profile = {
               {/* Floating badges */}
               <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
                 <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
-                  <i className="fas fa-wand-magic-sparkles"></i>&nbsp;&nbsp;UI
-                  Magic
+                  <i className="fas fa-paint-brush"></i>&nbsp;&nbsp;UI/UX Excellence
                 </div>
               </div>
               <div className="hidden lg:block absolute right-10 top-20 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
-                  <i className="fas fa-code"></i>&nbsp;&nbsp;Clean Code
+                  <i className="fas fa-shield-alt"></i>&nbsp;&nbsp;Secure Code
                 </div>
               </div>
               <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400">
-                  <i className="fas fa-lightbulb"></i>&nbsp;&nbsp;Innovation
+                  <i className="fas fa-robot"></i>&nbsp;&nbsp;AI Innovation
                 </div>
               </div>
             </div>

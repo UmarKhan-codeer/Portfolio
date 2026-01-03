@@ -1,8 +1,8 @@
-import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "@/components/globe";
 import { Code2, Paintbrush, Database, Layout, Cpu, Cloud } from "lucide-react";
+import PropTypes from "prop-types";
 import {
   FaReact,
   FaNodeJs,
@@ -63,6 +63,18 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
     </CardContent>
   </Card>
 );
+
+SkillCard.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  title: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      icon: PropTypes.node.isRequired,
+    })
+  ).isRequired,
+  color: PropTypes.string.isRequired,
+};
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -233,7 +245,9 @@ const SkillsSection = () => {
           ))}
         </div>
       </section>
-      <style jsx>{`
+
+      {/* Using standard style tag for now, or could move to globals.css */}
+      <style>{`
         @keyframes shimmer {
           0% {
             transform: translateX(-100%);
