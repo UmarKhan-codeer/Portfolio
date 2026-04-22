@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FaHome,
   FaLaptopCode,
@@ -8,33 +8,46 @@ import {
   FaEnvelope,
   FaBars,
 } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
-  const location = useLocation();
-  const [activeLink, setActiveLink] = useState(() => {
-    const path = location.pathname.substring(1) || "home";
-    return path;
-  });
+  const [activeLink, setActiveLink] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let current = "home";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 120) {
+          current = section.getAttribute("id") || "home";
+        }
+      });
+      setActiveLink(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const navLinks = [
-    { id: "home", icon: FaHome, text: "Home", path: "/" },
-    { id: "skills", icon: FaCode, text: "Skills", path: "/skills" },
+    { id: "home", icon: FaHome, text: "Home", href: "#home" },
+    { id: "skills", icon: FaCode, text: "Skills", href: "#skills" },
     {
       id: "experience",
       icon: FaBriefcase,
       text: "Experience",
-      path: "/experience",
+      href: "#experience",
     },
     {
       id: "education",
       icon: FaGraduationCap,
       text: "Education",
-      path: "/education",
+      href: "#education",
     },
-    { id: "projects", icon: FaLaptopCode, text: "Projects", path: "/projects" },
-    { id: "contact", icon: FaEnvelope, text: "Contact", path: "/contact" },
+    { id: "projects", icon: FaLaptopCode, text: "Projects", href: "#projects" },
+    { id: "contact", icon: FaEnvelope, text: "Contact", href: "#contact" },
   ];
 
   return (
@@ -44,7 +57,7 @@ export default function Header() {
           <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-4 md:px-6 py-2.5">
             {/* Mobile Menu Button */}
             <div className="flex justify-between items-center md:hidden px-2">
-              <Link to="/" className="text-white font-bold">Portfolio</Link>
+              <a href="#home" className="text-white font-bold">Portfolio</a>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2"
@@ -56,10 +69,10 @@ export default function Header() {
             {/* Navigation Links */}
             <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block`}>
               <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-1 lg:gap-2 py-4 md:py-0">
-                {navLinks.map(({ id, icon: Icon, text, path }) => (
-                  <Link
+                {navLinks.map(({ id, icon: Icon, text, href }) => (
+                  <a
                     key={id}
-                    to={path}
+                    href={href}
                     onClick={() => {
                       setActiveLink(id);
                       setIsMenuOpen(false);
@@ -78,7 +91,7 @@ export default function Header() {
                         }`}
                     />
                     <span className="inline">{text}</span>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
